@@ -2,24 +2,18 @@ package Types
 
 import (
 	"fmt"
+	"reflect"
 )
 
-func Arr_Types() {
+func SliceTypes() {
 
-	//array
-	fmt.Println("==== Array ====")
-	var arr [2]int
-	arr[0] = 1
-	arr[1] = 2
+	s := make([]int, 50, 100) //make([]T, length, capacity) , 100 ttl length, the length must <= capacity
+	v := new([100]int)[0:50]  //range 0~50
+	fmt.Println("s =", len(s), "= v =", len(v))
+
 	arrInt := []int{1, 2, 3, 4, 5, 6}
-	arrString := []string{"hello"}
-	arrString = append(arrString, "World")
-	fmt.Println(arr)
-	fmt.Println(len(arr)) //length
-	fmt.Println(arrInt, arrString)
-
-	//Slices Type
-	fmt.Println("==== Slice ====")
+	fmt.Println(reflect.TypeOf(arrInt))
+	//SliceType = "[" "]" ElementType .
 	var slice []int = arrInt[1:5]
 	fmt.Println(slice) //2,5 #range [1]~[5-1]; alike swift 1...5 not inculde 5
 	//Slices are like references to arrays

@@ -1,7 +1,9 @@
 package main
 
-import Variables "syntax/01_var"
+import Types "syntax/03_Types"
+
+//Variables "syntax/01_Variables"
 
 func main() {
-	Variables.Variables()
+	Types.SliceTypes()
 }

@@ -6,13 +6,6 @@ import (
 )
 
 func StringTypes() {
-	//--Types
-	//--int32 vs int64
-	fmt.Println("--- int32 vs int64 ---")
-	var n1 int32
-	var n2 int64
-	fmt.Println(int64(n1) + n2) //0 , because default value is 0
-
 	//--string
 	fmt.Println("--- String ---")
 	var name string
