@@ -3,8 +3,7 @@ package Types
 
 import "fmt"
 
-//介面類型定義了一組方法, 簡單來說就是自定義一個類型type
-
+//自定義類型type
 func InterfaceTypes_a() {
 	//空介面
 	fmt.Println("============ 空介面 ===========")

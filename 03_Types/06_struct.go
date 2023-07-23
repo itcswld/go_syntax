@@ -6,7 +6,8 @@ import (
 	"reflect"
 )
 
-//struct
+//StructType    = "struct" "{" { FieldDecl ";" } "}" . FieldDecl     = (IdentifierList Type | EmbeddedField) [ Tag ] .
+//IdentifierList Type
 type Stud struct {
 	no   int
 	name string
@@ -19,6 +20,13 @@ func (s1 Stud) getName() string { //return string type value
 func (s Stud) speak() {
 	fmt.Println("Student no.", s.no, s.name, `says, "Goood morning, Eve"`)
 }
+
+//
+type (
+	T5 struct{ f *T5 }       // T5 contains T5 as component of a pointer
+	T6 struct{ f func() T6 } // T6 contains T6 as component of a function type
+	T7 struct{ f [10][]T7 }  // T7 contains T7 as component of a slice in an array
+)
 
 func StructTypes() {
 	//struct
@@ -46,6 +54,7 @@ func StructTypes() {
 
 	sal.speak()     //Eve Tung says, "i wanna be a Go Dev. in 2022."
 	sal.PPl.speak() //Hi, my name is Eve Tung.%
+
 }
 
 type PPl struct {
@@ -53,15 +62,13 @@ type PPl struct {
 	lname string
 }
 
+//FieldDecl     = (IdentifierList Type | EmbeddedField) [ Tag ] .
+//EmbeddedField
 type SecretAgent struct {
-	PPl
+	PPl     //EmbeddedField
 	license bool
 }
 
 func (sa SecretAgent) speak() {
 	fmt.Println(sa.fname, sa.lname, `says, "i wanna be a Go Dev. in 2022."`)
 }
-
-// func (s PPl) speak() {
-// 	fmt.Printf("Hi, my name is %s %s.", s.fname, s.lname)
-// }

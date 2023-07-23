@@ -6,8 +6,6 @@ import (
 )
 
 func StringTypes() {
-	//--string
-	fmt.Println("--- String ---")
 	var name string
 	name = "Eve"
 	country := "Taiwan"
