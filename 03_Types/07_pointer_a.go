@@ -36,34 +36,11 @@ func PointerTypes() {
 	fmt.Println(*ptr, " //type :", reflect.TypeOf(*ptr)) //int
 
 	//--Pointer type with struct
-	type Food struct {
-		fluit string
-	}
-
+	type (
+		Food struct{ fluit string }
+	)
 	var f *Food         //flutter: Food? f;
 	fmt.Println(f)      //<nil>
 	f = &Food{"Banana"} //init f
 	fmt.Println(f.fluit)
-
-	//--pointer demenstrate swap 2 value
-	p1, p2 := "Ben", "John"
-	fmt.Println(p1, p2)
-	swap(&p1, &p2) //&(地址)
-	fmt.Println(p1, p2)
-
-	a, b := 1, 2
-	exchange(&a, &b)
-	fmt.Println(a, b)
-}
-
-//pointer
-func swap(p1, p2 *string) { //交換值
-	tmp := *p2
-	*p2 = *p1
-	*p1 = tmp
-}
-
-func exchange(a, b *int) {
-	*a, *b = *b, *a
-	fmt.Printf("*a type %T \n", *a)
 }

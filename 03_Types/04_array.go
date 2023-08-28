@@ -15,4 +15,8 @@ func ArrTypes() {
 	fmt.Println(arr)
 	fmt.Println(len(arr)) //length
 	fmt.Println(arrInt, arrString)
+
+	//unlimit length
+	var arr2 = [...]float32{1.0, 2.5, 3}
+	fmt.Print(arr2)
 }

@@ -3,8 +3,19 @@ package Types
 
 import "fmt"
 
-//自定義類型type
-func InterfaceTypes_a() {
+//----- 自定義類型type ------
+type Num int
+
+//封裝-方法
+func (x Num) Equal(i Num) bool {
+	return x == i
+}
+
+type NumJ interface {
+	Equal(i Num) bool
+}
+
+func InterfaceTypes_a() { //= "interface" "{" { InterfaceElem ";" } "}" .
 	//空介面
 	fmt.Println("============ 空介面 ===========")
 	var v1, v2 interface{}           // var v1 , v2 any
@@ -12,8 +23,9 @@ func InterfaceTypes_a() {
 
 	fmt.Printf("v1, v2 type = %T \n", v1)
 	//不支援相等運算
-	// v1, v2 = map[string]string{}, map[string]string{}
-	// fmt.Println(v1 == v2) // panic: runtime error: comparing uncomparable type map[string]string
+	v1, v2 = map[string]string{}, map[string]string{}
+	fmt.Println(v1 == v2) // panic: runtime error: comparing uncomparable type map[string]string
+
 	fmt.Println("============ 介面設定值 ===========")
 	var x Num = 8
 	var y NumJ = x
@@ -22,14 +34,4 @@ func InterfaceTypes_a() {
 	fmt.Println(y.Equal(x)) //true
 	fmt.Println(x.Equal(z)) //false
 
-}
-
-type Num int
-
-func (x Num) Equal(i Num) bool {
-	return x == i
-}
-
-type NumJ interface {
-	Equal(i Num) bool
 }
