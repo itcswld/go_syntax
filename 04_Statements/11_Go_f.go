@@ -1,6 +1,6 @@
 package stmt
 
-//1.6_concurrency
+//goroutine
 /*
 this is where you have a queue of work to be done.
 multiple concurrent workers pulling items of the queue.
@@ -10,6 +10,7 @@ import (
 	"fmt"
 )
 
+//Work_Pool
 func GoStmt_f() {
 	jobs := make(chan int, 100)
 	results := make(chan int, 100)

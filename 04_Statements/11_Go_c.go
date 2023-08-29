@@ -1,7 +1,6 @@
 package stmt
 
-//1.6_concurrency
-
+//goroutine
 import (
 	"fmt"
 	"time"

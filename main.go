@@ -1,9 +1,9 @@
 package main
 
-import Types "syntax/03_Types"
+import pack "syntax/Packages"
 
 //Variables "syntax/01_Variables"
 
 func main() {
-	Types.InterfaceTypes_f()
+	pack.ReflectPack_b()
 }

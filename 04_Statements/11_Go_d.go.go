@@ -1,4 +1,4 @@
-//1.6_concurrency
+//goroutine
 package stmt
 
 import (
