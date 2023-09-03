@@ -1,3 +1,4 @@
+//goroutine --多個goroutine, 實現程式的平行
 package stmt
 
 //channel : Communicating by sharing memory
@@ -34,7 +35,7 @@ func ponger(ponger <-chan int, pinger chan<- int) {
 	}
 }
 
-func GoStmt_a() {
+func GoStmt_b() {
 	//設定pinger & ponger 角色都可接球亦可拍球
 	var ping chan int //Read&Write
 	ping = make(chan int)

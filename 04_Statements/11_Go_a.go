@@ -1,4 +1,4 @@
-//goroutine
+//goroutine --獨立併發執行緒
 package stmt
 
 import (
@@ -6,15 +6,22 @@ import (
 	"time"
 )
 
-func GoStmt_b() {
+func GoStmt_a() {
 	//run both code side by side
-	go count("sleep") //"go" run this func in the  background and then continue to the next line immediately
-	count("fish")
+	go count("on") //"go" run this func in the  background and then continue to the next line immediately
+	count("off")
 }
 
-func count(thing string) {
+/*
+1 off
+1 on
+2 on
+2 off
+*/
+
+func count(power string) {
 	for i := 1; true; i++ {
-		fmt.Println(i, thing)
+		fmt.Println(i, power)
 		time.Sleep(time.Millisecond * 500)
 	}
 }
